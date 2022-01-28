@@ -43,7 +43,7 @@ class EndpointBuilder:
 
             if parse:
                 url += parameter_str
-        
+
         return url
 
     def set_api_endpoint(
