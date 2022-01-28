@@ -44,7 +44,7 @@ def find_concepts_term(
 
     Returns:
         dict: [description]
-    """    
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -237,8 +237,9 @@ def get_concept_children(
     concept_id: str,
     form: str = "inferred",
     include_descendant_count: bool = False,
-    **kwargs):
-    
+    **kwargs
+):
+
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -261,12 +262,14 @@ def get_concept_children(
     else:
         return {"success": False, "content": response.content}
 
+
 def get_concept_parents(
     concept_id: str,
     form: str = "inferred",
     include_descendant_count: bool = False,
-    **kwargs):
-    
+    **kwargs
+):
+
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -281,7 +284,6 @@ def get_concept_parents(
         endpoint_builder.browser_concept_url + "/%s/%s" % (concept_id, "parents"),
         parameters={"form": form, "includeDescendantCount": include_descendant_count},
     )
-
 
     response = requests.get(url, headers=endpoint_builder.headers)
 

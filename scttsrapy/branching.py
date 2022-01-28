@@ -23,7 +23,7 @@ def all_branches(**kwargs) -> dict:
 
     Returns:
         dict: Model.
-    """    
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -39,7 +39,9 @@ def all_branches(**kwargs) -> dict:
         return {"success": False, "content": response.content}
 
 
-def single_branch(branch: str, include_inherited_metadata: bool = False, **kwargs) -> dict:
+def single_branch(
+    branch: str, include_inherited_metadata: bool = False, **kwargs
+) -> dict:
     """Retrieve a single branch.
 
     Args:
@@ -48,7 +50,7 @@ def single_branch(branch: str, include_inherited_metadata: bool = False, **kwarg
 
     Returns:
         dict: [description]
-    """    
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -78,14 +80,14 @@ def branch_children(
     """[summary]
 
     Args:
-        branch (str): 
+        branch (str):
         immediate_children (bool, optional): immediateChildren. Defaults to True.
         page (int, optional): page. Defaults to 0.
         size (int, optional): size. Defaults to 100.
 
     Returns:
         dict: Model.
-    """    
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -95,7 +97,11 @@ def branch_children(
 
     url = endpoint_builder.with_parameters(
         endpoint_builder.branch_url + "/children",
-        parameters={"immediateChildren": immediate_children, "page": page, "size": size},
+        parameters={
+            "immediateChildren": immediate_children,
+            "page": page,
+            "size": size,
+        },
     )
 
     response = requests.get(url, headers=endpoint_builder.headers)
