@@ -1,6 +1,6 @@
-# SCTTSRApy: Python Interface to the SNOMED CT Terminology Server REST API
+# <img src="https://svgshare.com/i/dke.svg" align="right" width="180px />
+ SCTTSRApy: Python Interface to the SNOMED CT Terminology Server REST API
 
-<a href="https://github.com/AberystwythSystemsBiology/SCTTSRApy"><img src="https://svgshare.com/i/dke.svg" align="right" hspace="10" vspace="6"></a>
 
 [![GitHub commits](https://badgen.net/github/commits/AberystwythSystemsBiology/SCTTSRApy/main)](https://GitHub.com/AberystwythSystemsBiology/SCTTSRApy/main/commit/)
 ![GitHub issues](https://img.shields.io/github/issues/AberystwythSystemsBiology/SCTTSRApy)
