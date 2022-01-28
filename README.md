@@ -1,6 +1,18 @@
 # SCTTSRApy: Python Interface to the SNOMED CT Terminology Server REST API
 
+![GitHub commits](https://badgen.net/github/commits/AberystwythSystemsBiology/SCTTSRApy/main)](https://GitHub.com/AberystwythSystemsBiology/SCTTSRApy/main/commit/)
+![GitHub issues](https://img.shields.io/github/issues/AberystwythSystemsBiology/SCTTSRApy)
+![GitHub repo size](https://img.shields.io/github/repo-size/AberystwythSystemsBiology/SCTTSRApy)
+![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
 Interrogate the SNOMED CT clinical ontology using the SNOMED International Terminology Server REST API.
+
+## Bug reporting and feature suggestions
+
+Please report all bugs or feature suggestions to the [issues tracker](https://www.github.com/AberystwythSystemsBiology/SCTTSRApy/issues). Please do not email me directly as I'm struggling to keep track of what needs to be fixed.
+
+We welcome all sorts of contribution, so please be as candid as you want.
 
 ## Terms & conditions
 
@@ -22,3 +34,7 @@ Use of SNOMED CT terminology for data analysis or health care production systems
 
 - UK-based users can obtain a licence free of charge on the [NHS TRUD website](https://isd.digital.nhs.uk/trud/users/guest/filters/0/home).
 - residents of other Member Countries and low-income countries are also eligible. More information can be found on the [SNOMED International website](https://www.snomed.org/snomed-ct/get-snomed).
+
+## License
+
+This project is proudly licensed under the [GNU General Public License v3.0](https://raw.githubusercontent.com/AberystwythSystemsBiology/SCTTSRApy/main/LICENSE).
