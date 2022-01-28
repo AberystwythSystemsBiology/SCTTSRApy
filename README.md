@@ -30,6 +30,8 @@ We currently support the following API endpoints:
 
 ## Example
 
+Retrieve all children of `363908000`:
+
 ```python
 >>> from scttsrapy.concepts import get_concept_children
 >>> get_concept_children("363908000")
@@ -56,6 +58,24 @@ We currently support the following API endpoints:
     ]
 }
 >>>
+```
+
+If you're using a custom Snowstorm instance, you can easily configure a custom `endpoint_builder`:
+
+```python
+>>> from scttsrapy.api import EndpointBuilder
+>>> endpoint_builder = EndpointBuilder()
+>>> # Setting up the custom API endpoint
+>>> endpoint_builder.set_api_endpoint("localhost:9000)
+>>> # Setting up a custom header. In reality this isn't going to do anything, but you may want to lock your Snowstorm API behind a JWT.
+>>> endpoint_builder.set_headers(
+....{
+....    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+....})
+>>> get_concept_children("363908000", endpoint_builder=endpoint_builder)
+{
+    ...
+}
 ```
 
 ## Bug reporting and feature suggestions
