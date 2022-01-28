@@ -58,8 +58,6 @@ def branch_children(branch: str,  immediateChildren: bool = True, page:int = 0, 
         }
     )
 
-    print(url)
-
     response = requests.get(
         url,
         headers=endpoint_builder.headers
