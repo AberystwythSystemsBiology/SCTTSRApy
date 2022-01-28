@@ -20,10 +20,33 @@ We currently support the following API endpoints:
 - Descriptions
 - Relationships
 
-## Example 
+## Example
 
 ```
-Working example here.
+>> from scttsrapy.concepts import get_concept_children
+>> get_concept_children("363908000")
+{
+    "success": true,
+    "content": [
+        {
+            "conceptId": "763699005",
+            "active": true,
+            "definitionStatus": "PRIMITIVE",
+            "moduleId": "900000000000207008",
+            "fsn": {
+                "term": "Clinical Opiate Withdrawal Scale score (observable entity)",
+                "lang": "en"
+            },
+            "pt": {
+                "term": "Clinical Opiate Withdrawal Scale score",
+                "lang": "en"
+            },
+            "isLeafInferred": true,
+            "id": "763699005"
+        },
+        ...
+    ]
+}
 ```
 
 ## Bug reporting and feature suggestions
