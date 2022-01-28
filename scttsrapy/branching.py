@@ -18,7 +18,7 @@ def all_branches(**kwargs):
         return {"success": False, "content": response.content}
 
 
-def single_branch(branch: str, includeInheritedMetadata: bool = False, **kwargs):
+def single_branch(branch: str, include_inherited_metadata: bool = False, **kwargs):
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -27,7 +27,7 @@ def single_branch(branch: str, includeInheritedMetadata: bool = False, **kwargs)
 
     url = endpoint_builder.with_parameters(
         endpoint_builder.branch_url,
-        parameters={"includeInheritedMetadata": includeInheritedMetadata},
+        parameters={"includeInheritedMetadata": include_inherited_metadata},
     )
 
     response = requests.get(url, headers=endpoint_builder.headers)
