@@ -8,7 +8,7 @@ Interrogate the SNOMED CT clinical ontology using the SNOMED International Termi
 
 By default, `SCTTSRApy` queries the public SNOMED CT terminology endpoint hosted by SNOMED International.
 
-This server has no service level agreement and *MUST NOT be used as part of production systems in healthcare settings*, even if you hold a SNOMED CT licence.
+This server has no service level agreement and **MUST NOT be used as part of production systems in healthcare settings**, even if you hold a SNOMED CT licence.
 
 Please refer to the [Snowstorm documentation](https://github.com/IHTSDO/snowstorm/blob/master/docs/getting-started.md) for instructions on how to build a dedicated SNOMED endpoint for production.
 
