@@ -1,4 +1,4 @@
-# SCTTSRApy
+# SCTTSRApy: Python Interface to the SNOMED CT Terminology Server REST API
 
 Interrogate the SNOMED CT clinical ontology using the SNOMED International Terminology Server REST API.
 
@@ -11,7 +11,6 @@ By default, `SCTTSRApy` queries the public SNOMED CT terminology endpoint hosted
 This server has no service level agreement and *MUST NOT be used as part of production systems in healthcare settings*, even if you hold a SNOMED CT licence.
 
 Please refer to the [Snowstorm documentation](https://github.com/IHTSDO/snowstorm/blob/master/docs/getting-started.md) for instructions on how to build a dedicated SNOMED endpoint for production.
-
 
 ### SNOMED CT Terminology
 
