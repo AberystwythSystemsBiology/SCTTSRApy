@@ -44,6 +44,8 @@ class EndpointBuilder():
     def set_headers(self, headers: dict) -> None:
         self._headers.update(headers)
 
+    # SNOWSTORM ENTITIES
+
     @property
     def base_branch_url(self) -> str:
         return self.api_endpoint + "branches/"
@@ -51,3 +53,10 @@ class EndpointBuilder():
     @property
     def branch_url(self) -> str:
         return self.base_branch_url + "%s" % (str(self.branch))
+
+    @property
+    def base_code_system_url(self) ->str:
+        return self.api_endpoint + "codesystems/"
+
+    def generate_code_system_url(self, short_name: str) -> str:
+        return self.base_code_system_url + "%s" % (short_name)
