@@ -19,6 +19,7 @@ from .api import EndpointBuilder
 
 
 def all_branches(**kwargs):
+
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:

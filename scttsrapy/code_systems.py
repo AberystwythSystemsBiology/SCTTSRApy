@@ -18,7 +18,15 @@ import requests
 from .api import EndpointBuilder
 
 
-def all_code_systems(for_branch: str = None, **kwargs):
+def all_code_systems(for_branch: str = None, **kwargs) -> dict:
+    """List all code systems. for_branch is an optional parameter to find the code system which the specified branch is within.
+
+    Args:
+        for_branch (str, optional): forBranch. Defaults to None.
+
+    Returns:
+        dict: Model
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -39,7 +47,15 @@ def all_code_systems(for_branch: str = None, **kwargs):
         return {"success": False, "content": response.content}
 
 
-def code_system(short_name: str, **kwargs):
+def code_system(short_name: str, **kwargs) -> dict:
+    """Retrieve a code system.
+
+    Args:
+        short_name (str): Code system short name.
+
+    Returns:
+        dict: Model
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -61,7 +77,18 @@ def code_system_versions(
     show_future_f_versions: bool = False,
     show_internal_releases: bool = False,
     **kwargs
-):
+) -> dict:
+    """Retrieve versions of a code system.
+
+    Args:
+        short_name (str): Code system short name.
+        show_future_f_versions (bool, optional): Should versions with a future effective-time be shown. Defaults to False.
+        show_internal_releases (bool, optional): Should versions marked as 'internalRelease' be shown. Defaults to False.
+
+    Returns:
+        dict: Model
+    """
+
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
