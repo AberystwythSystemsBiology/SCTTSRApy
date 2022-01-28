@@ -34,7 +34,7 @@ def find_concepts_term(
     Args:
         term (str): Search term to match against concept descriptions using a case-insensitive multi-prefix matching strategy.
         term_active (bool, optional): termActive. Defaults to None.
-        language (str, optional): Set of two character language codes to match. The English language code 'en' will not be added automatically, in contrast to the Accept-Language header which always includes it. Accept-Language header still controls result FSN and PT language selection. Defaults to "en".
+        language (str, optional): Set of two character language codes to match. Defaults to "en".
         return_id_only (bool, optional): returnIdOnly. Defaults to None.
         offset (int, optional): [description]. Defaults to 0.
         limit (int, optional): [description]. Defaults to 50.
