@@ -10,6 +10,14 @@
 Interrogate the SNOMED CT clinical ontology using the SNOMED International Terminology Server REST API.
 
 
+## Installing
+
+You can install the development version directly from GitHub with:
+
+```
+pip install git+https://github.com/AberystwythSystemsBiology/SCTTSRApy
+```
+
 ## Features
 
 We currently support the following API endpoints:
@@ -23,8 +31,8 @@ We currently support the following API endpoints:
 ## Example
 
 ```python
->> from scttsrapy.concepts import get_concept_children
->> get_concept_children("363908000")
+>>> from scttsrapy.concepts import get_concept_children
+>>> get_concept_children("363908000")
 {
     "success": true,
     "content": [
@@ -47,6 +55,7 @@ We currently support the following API endpoints:
         ...
     ]
 }
+>>>
 ```
 
 ## Bug reporting and feature suggestions
