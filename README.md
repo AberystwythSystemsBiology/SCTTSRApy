@@ -8,6 +8,23 @@
 
 Interrogate the SNOMED CT clinical ontology using the SNOMED International Terminology Server REST API.
 
+
+## Features
+
+We currently support the following API endpoints:
+
+- Branching
+- Code Systems
+- Concepts
+- Descriptions
+- Relationships
+
+## Example 
+
+```
+Working example here.
+```
+
 ## Bug reporting and feature suggestions
 
 Please report all bugs or feature suggestions to the [issues tracker](https://www.github.com/AberystwythSystemsBiology/SCTTSRApy/issues). Please do not email me directly as I'm struggling to keep track of what needs to be fixed.
