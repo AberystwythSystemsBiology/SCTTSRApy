@@ -86,3 +86,7 @@ class EndpointBuilder:
     @property
     def base_concept_url(self) -> str:
         return self.api_endpoint + self.branch + "/concepts"
+
+    @property
+    def browser_concept_url(self) -> str:
+        return self.api_endpoint + "browser/" + self.branch + "/concepts"

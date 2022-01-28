@@ -200,3 +200,61 @@ def get_concept_relationships(
         return {"success": True, "content": response.json()}
     else:
         return {"success": False, "content": response.content}
+
+
+def get_concept_children(
+    concept_id: str,
+    form: str = "inferred",
+    include_descendant_count: bool = False,
+    **kwargs):
+    
+    if "endpoint_builder" not in kwargs:
+        endpoint_builder = EndpointBuilder()
+    else:
+        endpoint_builder = kwargs["endpoint_builder"]
+
+    forms = ["inferred", "stated", "additional"]
+
+    if form.lower() not in forms:
+        raise Exception("form %s not one of %s" % (form, ",".join(forms)))
+
+    url = endpoint_builder.with_parameters(
+        endpoint_builder.browser_concept_url + "/%s/%s" % (concept_id, "children"),
+        parameters={"form": form, "includeDescendantCount": include_descendant_count},
+    )
+
+    response = requests.get(url, headers=endpoint_builder.headers)
+
+    if response.status_code == 200:
+        return {"success": True, "content": response.json()}
+    else:
+        return {"success": False, "content": response.content}
+
+def get_concept_parents(
+    concept_id: str,
+    form: str = "inferred",
+    include_descendant_count: bool = False,
+    **kwargs):
+    
+    if "endpoint_builder" not in kwargs:
+        endpoint_builder = EndpointBuilder()
+    else:
+        endpoint_builder = kwargs["endpoint_builder"]
+
+    forms = ["inferred", "stated", "additional"]
+
+    if form.lower() not in forms:
+        raise Exception("form %s not one of %s" % (form, ",".join(forms)))
+
+    url = endpoint_builder.with_parameters(
+        endpoint_builder.browser_concept_url + "/%s/%s" % (concept_id, "parents"),
+        parameters={"form": form, "includeDescendantCount": include_descendant_count},
+    )
+
+
+    response = requests.get(url, headers=endpoint_builder.headers)
+
+    if response.status_code == 200:
+        return {"success": True, "content": response.json()}
+    else:
+        return {"success": False, "content": response.content}
