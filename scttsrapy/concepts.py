@@ -36,14 +36,14 @@ def find_concepts_term(
         term_active (bool, optional): termActive. Defaults to None.
         language (str, optional): Set of two character language codes to match. Defaults to "en".
         return_id_only (bool, optional): returnIdOnly. Defaults to None.
-        offset (int, optional): [description]. Defaults to 0.
-        limit (int, optional): [description]. Defaults to 50.
-        search_after (int, optional): [description]. Defaults to None.
-        is_published (bool, optional): [description]. Defaults to None.
-        module (list, optional): [description]. Defaults to [].
+        offset (int, optional): offset. Defaults to 0.
+        limit (int, optional): limit. Defaults to 50.
+        search_after (int, optional): searchAfter. Defaults to None.
+        is_published (bool, optional): isPublished. Defaults to None.
+        module (list, optional): Set of module ids to filter concepts by. Defaults to any. Defaults to [].
 
     Returns:
-        dict: [description]
+        dict: Model.
     """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
