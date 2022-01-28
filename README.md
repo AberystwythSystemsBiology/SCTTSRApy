@@ -22,7 +22,7 @@ We currently support the following API endpoints:
 
 ## Example
 
-```
+```python
 >> from scttsrapy.concepts import get_concept_children
 >> get_concept_children("363908000")
 {
