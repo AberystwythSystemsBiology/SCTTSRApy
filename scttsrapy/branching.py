@@ -18,8 +18,12 @@ import requests
 from .api import EndpointBuilder
 
 
-def all_branches(**kwargs):
+def all_branches(**kwargs) -> dict:
+    """Retrieve all branches
 
+    Returns:
+        dict: Model.
+    """    
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -35,7 +39,16 @@ def all_branches(**kwargs):
         return {"success": False, "content": response.content}
 
 
-def single_branch(branch: str, include_inherited_metadata: bool = False, **kwargs):
+def single_branch(branch: str, include_inherited_metadata: bool = False, **kwargs) -> dict:
+    """Retrieve a single branch.
+
+    Args:
+        branch (str): branch
+        include_inherited_metadata (bool, optional): includeInheritedMetadata. Defaults to False.
+
+    Returns:
+        dict: [description]
+    """    
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -61,7 +74,18 @@ def branch_children(
     page: int = 0,
     size: int = 100,
     **kwargs
-):
+) -> dict:
+    """[summary]
+
+    Args:
+        branch (str): 
+        immediate_children (bool, optional): immediateChildren. Defaults to True.
+        page (int, optional): page. Defaults to 0.
+        size (int, optional): size. Defaults to 100.
+
+    Returns:
+        dict: Model.
+    """    
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
