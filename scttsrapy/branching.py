@@ -56,7 +56,7 @@ def single_branch(branch: str, include_inherited_metadata: bool = False, **kwarg
 
 def branch_children(
     branch: str,
-    immediateChildren: bool = True,
+    immediate_children: bool = True,
     page: int = 0,
     size: int = 100,
     **kwargs
@@ -70,7 +70,7 @@ def branch_children(
 
     url = endpoint_builder.with_parameters(
         endpoint_builder.branch_url + "/children",
-        parameters={"immediateChildren": immediateChildren, "page": page, "size": size},
+        parameters={"immediateChildren": immediate_children, "page": page, "size": size},
     )
 
     response = requests.get(url, headers=endpoint_builder.headers)
