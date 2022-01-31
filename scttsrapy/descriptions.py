@@ -57,7 +57,7 @@ def search_concept_descriptions(
 
     Returns:
         dict: Model.
-    """    
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -103,6 +103,16 @@ def search_concept_descriptions(
 def find_descriptions(
     concept_ids: list, offset: int = 0, limit: int = 50, **kwargs
 ) -> dict:
+    """[summary]
+
+    Args:
+        concept_ids (list): List of Concept IDs.
+        offset (int, optional): offset. Defaults to 0.
+        limit (int, optional): limit. Defaults to 50.
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -117,7 +127,6 @@ def find_descriptions(
 
     if response.status_code == 200:
         return {"success": True, "content": response.json()}
-
     else:
         return {"success": False, "content": response.content}
 
