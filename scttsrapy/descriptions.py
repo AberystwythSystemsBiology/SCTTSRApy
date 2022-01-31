@@ -34,6 +34,30 @@ def search_concept_descriptions(
     limit: int = 50,
     **kwargs,
 ) -> dict:
+    """Search for concept descriptions.
+
+    Args:
+        term (str): term.
+        active (bool, optional): active. Defaults to False.
+        module (list, optional): List of modules. Defaults to [].
+        language (list, optional): The Accept-Language header is used to specify the user's preferred language, 'en' is always added as a fallback if not already included in the list.. Defaults to [].
+        type (list, optional): Set of description type ids to use include. Defaults to [].
+        semantic_tags (list, optional): Set of semantic tags. Defaults to [].
+        preferred_in (list, optional): Set of description language reference sets. The description must be preferred in at least one of these to match. Defaults to [].
+        acceptable_in (list, optional): Set of description language reference sets. The description must be acceptable in at least one of these to match. Defaults to [].
+        preferred_or_acceptable_in (list, optional): Set of description language reference sets. The description must be preferred OR acceptable in at least one of these to match. Defaults to [].
+        concept_active (bool, optional): conceptActive. Defaults to None.
+        group_by_concept (bool, optional): groupByConcept.  Defaults to False.
+        search_mode (str, optional): searchMode. One of standard, regex or whole_word. Defaults to "standard".
+        offset (int, optional): offset. Defaults to 0.
+        limit (int, optional): limit. Defaults to 50.
+
+    Raises:
+        Exception: If one of standard, regex or whole_word is not search_mode as form, an exception is thrown.
+
+    Returns:
+        dict: Model.
+    """    
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
