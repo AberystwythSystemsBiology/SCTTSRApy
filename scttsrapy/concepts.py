@@ -84,7 +84,23 @@ def find_concepts_concept_id(
     is_published: bool = None,
     module: list = [],
     **kwargs
-):
+) -> dict:
+    """Find concept using concept ID.
+
+    Args:
+        concept_ids (list, optional): List of cuids. Defaults to [].
+        term_active (bool, optional): termActive. Defaults to None.
+        language (str, optional): Set of two character language codes to match. Defaults to "en".
+        return_id_only (bool, optional): returnIdOnly. Defaults to None.
+        offset (int, optional): offset. Defaults to 0.
+        limit (int, optional): limit. Defaults to 50.
+        search_after (int, optional): searchAfter. Defaults to None.
+        is_published (bool, optional): isPublished. Defaults to None.
+        module (list, optional): Set of module ids to filter concepts by. Defaults to any. Defaults to []
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -113,7 +129,15 @@ def find_concepts_concept_id(
         return {"success": False, "content": response.content}
 
 
-def get_concept(concept_id: str, **kwargs):
+def get_concept(concept_id: str, **kwargs) -> dict:
+    """Find concept
+
+    Args:
+        concept_id (str): Concept ID.
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -129,7 +153,7 @@ def get_concept(concept_id: str, **kwargs):
         return {"success": False, "content": response.content}
 
 
-def _get_concept_misc(concept_id: str, req: str, endpoint_builder):
+def _get_concept_misc(concept_id: str, req: str, endpoint_builder) -> dict:
 
     url = endpoint_builder.base_concept_url + "/%s/%s" % (concept_id, req)
 
@@ -141,7 +165,15 @@ def _get_concept_misc(concept_id: str, req: str, endpoint_builder):
         return {"success": False, "content": response.content}
 
 
-def get_concept_authoring_form(concept_id: str, **kwargs):
+def get_concept_authoring_form(concept_id: str, **kwargs) -> dict:
+    """Get Concept Authoring Form.
+
+    Args:
+        concept_id (str): Concept ID.
+
+    Returns:
+        dict: Model
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -150,7 +182,15 @@ def get_concept_authoring_form(concept_id: str, **kwargs):
     return _get_concept_misc(concept_id, "authoring-form", endpoint_builder)
 
 
-def get_concept_descriptions(concept_id: str, **kwargs):
+def get_concept_descriptions(concept_id: str, **kwargs) -> dict:
+    """Get Concept Descriptions.
+
+    Args:
+        concept_id (str): Concept ID.
+
+    Returns:
+        dict: Model
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -159,7 +199,15 @@ def get_concept_descriptions(concept_id: str, **kwargs):
     return _get_concept_misc(concept_id, "descriptions", endpoint_builder)
 
 
-def get_concept_inbound_relationships(concept_id: str, **kwargs):
+def get_concept_inbound_relationships(concept_id: str, **kwargs) -> dict:
+    """Get Concept Inbound Relationships.
+
+    Args:
+        concept_id (str): Concept ID.
+
+    Returns:
+        dict: Model
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -170,8 +218,18 @@ def get_concept_inbound_relationships(concept_id: str, **kwargs):
 
 def get_concept_descendants(
     concept_id: str, stated: bool = False, offset: int = 0, limit: int = 50, **kwargs
-):
+) -> dict:
+    """Get Concept Descendants.
 
+    Args:
+        concept_id (str): Concept ID.
+        stated (bool, optional): stated. Defaults to False.
+        offset (int, optional): offset. Defaults to 0.
+        limit (int, optional): limit. Defaults to 50.
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -192,7 +250,17 @@ def get_concept_descendants(
 
 def get_concept_normal_form(
     concept_id: str, stated_view: bool = False, include_terms: bool = False, **kwargs
-):
+) -> dict:
+    """Get concept normal form.
+
+    Args:
+        concept_id (str): Concept ID.
+        stated_view (bool, optional): statedView. Defaults to False.
+        include_terms (bool, optional): includeTerms. Defaults to False.
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -213,8 +281,18 @@ def get_concept_normal_form(
 
 def get_concept_relationships(
     concept_id: str, stated: bool = False, offset: int = 0, limit: int = 1000, **kwargs
-):
+) -> dict:
+    """Find concepts which reference this concept in the inferred or stated form (including stated axioms).
 
+    Args:
+        concept_id (str): Concept IDs
+        stated (bool, optional): stated. Defaults to False.
+        offset (int, optional): offset. Defaults to 0.
+        limit (int, optional): limit. Defaults to 1000.
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -238,7 +316,7 @@ def get_concept_children(
     form: str = "inferred",
     include_descendant_count: bool = False,
     **kwargs
-):
+) -> dict:
 
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
@@ -268,7 +346,7 @@ def get_concept_parents(
     form: str = "inferred",
     include_descendant_count: bool = False,
     **kwargs
-):
+) -> dict:
 
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
