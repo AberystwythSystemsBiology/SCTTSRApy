@@ -112,3 +112,9 @@ class EndpointBuilder:
     @property
     def base_relationships_url(self) -> str:
         return self.api_endpoint + self.branch + "/relationships"
+
+    ## descriptions.py
+
+    @property
+    def base_descriptions_url(self) -> str:
+        return self.api_endpoint + self.branch + "/descriptions"
