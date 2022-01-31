@@ -317,6 +317,19 @@ def get_concept_children(
     include_descendant_count: bool = False,
     **kwargs
 ) -> dict:
+    """findConceptChildren
+
+    Args:
+        concept_id (str): Concept ID.
+        form (str, optional): form. One of inferred, stated or additional. Defaults to "inferred".
+        include_descendant_count (bool, optional): includeDescendantCount. Defaults to False.
+
+    Raises:
+        Exception: If one of inferred, stated or additional is not passed as form, an exception is thrown.
+
+    Returns:
+        dict: Model.
+    """
 
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
@@ -347,7 +360,19 @@ def get_concept_parents(
     include_descendant_count: bool = False,
     **kwargs
 ) -> dict:
+    """findConceptParents
 
+    Args:
+        concept_id (str): Concept ID.
+        form (str, optional): form. One of inferred, stated or additional. Defaults to "inferred".
+        include_descendant_count (bool, optional): includeDescendantCount. Defaults to False.
+
+    Raises:
+        Exception: If one of inferred, stated or additional is not passed as form, an exception is thrown.
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
