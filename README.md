@@ -1,4 +1,4 @@
-# <img src="https://svgshare.com/i/dke.svg" align="right" width="180px" />SCTTSRApy: Python Interface to the SNOMED CT Terminology Server REST API
+# <img src="https://svgshare.com/i/dke.svg" align="right" width="180px" />SCTTSRApy: Python Interface to the SNOMED CT Snowstorm Terminology Server REST API
 
 
 [![GitHub commits](https://badgen.net/github/commits/AberystwythSystemsBiology/SCTTSRApy/main)](https://GitHub.com/AberystwythSystemsBiology/SCTTSRApy/main/commit/)
