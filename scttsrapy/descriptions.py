@@ -132,6 +132,11 @@ def find_descriptions(
 
 
 def list_semantic_tags(**kwargs) -> dict:
+    """List semantic tags of all active concepts together with a count of concepts using each
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -149,6 +154,14 @@ def list_semantic_tags(**kwargs) -> dict:
 
 
 def fetch_description(description_id: str, **kwargs) -> dict:
+    """fetchDescription
+
+    Args:
+        description_id (str): descriptionId
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
