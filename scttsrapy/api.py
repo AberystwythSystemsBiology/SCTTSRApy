@@ -106,3 +106,9 @@ class EndpointBuilder:
     @property
     def browser_concept_url(self) -> str:
         return self.api_endpoint + "browser/" + self.branch + "/concepts"
+
+    ## relationships.py
+
+    @property
+    def base_relationships_url(self) -> str:
+        return self.api_endpoint + self.branch + "/relationships"
