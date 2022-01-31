@@ -66,7 +66,7 @@ If you're using a custom Snowstorm instance, you can easily configure a custom `
 >>> from scttsrapy.api import EndpointBuilder
 >>> endpoint_builder = EndpointBuilder()
 >>> # Setting up the custom API endpoint
->>> endpoint_builder.set_api_endpoint("localhost:9000)
+>>> endpoint_builder.set_api_endpoint("localhost:9000")
 >>> # Setting up a custom header. In reality this isn't going to do anything, but you may want to lock your Snowstorm API behind a JWT.
 >>> endpoint_builder.set_headers(
 ....{
