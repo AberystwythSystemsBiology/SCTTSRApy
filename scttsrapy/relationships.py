@@ -30,6 +30,23 @@ def find_relationship(
     limit: int = 50,
     **kwargs
 ) -> dict:
+    """findRelationship
+
+    Args:
+        active (bool, optional): active. Defaults to None.
+        module (str, optional): module. Defaults to None.
+        effective_time (str, optional): effectiveTime. Defaults to None.
+        source (str, optional): source. Defaults to None.
+        relationship_type (str, optional): relationshipType. Defaults to None.
+        destination (str, optional): destination. Defaults to None.
+        characteristic_type (str, optional): characteristicType. Defaults to None.
+        group (str, optional): group. Defaults to None.
+        offset (int, optional): offset. Defaults to 0.
+        limit (int, optional): limit. Defaults to 50.
+
+    Returns:
+        dict: Model
+    """    
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
@@ -60,6 +77,14 @@ def find_relationship(
 
 
 def fetch_relationship(relationship_id: str, **kwargs) -> dict:
+    """fetchRelationship
+
+    Args:
+        relationship_id (str): relationshipId
+
+    Returns:
+        dict: Model.
+    """
     if "endpoint_builder" not in kwargs:
         endpoint_builder = EndpointBuilder()
     else:
